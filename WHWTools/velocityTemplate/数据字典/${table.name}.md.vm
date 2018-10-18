@@ -1,0 +1,11 @@
+
+-  ${table.remark}
+
+|字段|类型|空|默认|注释|
+|:----    |:-------    |:--- |-- -|------      |
+#foreach ($col in ${table.columns})
+|${col.name} | ${strUtil.lowerCase(${col.type})}(${col.size}#if(${col.digits}>0),${col.digits}#end) | #if(${col.nullable})是#else 否 #end | $!{col.defaultValue} | ${col.comments} |
+#end
+
+
+- 备注：无
